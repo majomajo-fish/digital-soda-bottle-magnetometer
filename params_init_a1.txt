@@ -1,0 +1,14 @@
+ 250,  600      # c_y: Y-pixel coordinates for spot detection. Use comma-separated values for multiple spots (e.g., "250, 600"). Set to -1 for auto-tracking mode.
+[line 2]
+[line 3]  
+11        # n_conv: Smoothing filter width in pixels. Larger values reduce noise but may blur the peak. Typical range: 5-20.
+2150.0    # distance: Distance from mirror to screen in millimeters. Used for angle calculation (reference only).
+0.21      # pixlen: Physical size of one pixel in mm/pixel. Used for displacement calculation (reference only).
+/path/to/output_data/   # Base directory: Root folder for output data files. Subdirectories 'data/p1/', 'data/p2/' etc. will be created.
+[line 8]
+0         # camera_index: Camera device number. 0 = built-in camera, 1 = first external camera, 2 = second external, etc.
+/path/to/temp_images/   # temp_dir: Temporary directory for working files. Images are processed here before archiving.
+          # archive_dir: Directory for archived snapshot images. Leave empty to use 'images/' under base directory.
+5.0       # capture_interval: Time between captures in seconds. Smaller values = higher time resolution but more data.
+5         # avg_window: Time averaging window in minutes (reference only, used by avg_data.py).
+10        # flush_frequency: Write data to file every N captures. Lower = more frequent disk writes. Default: 60 (5 min at 5 sec interval).
